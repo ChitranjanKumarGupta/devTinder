@@ -19,6 +19,19 @@ try{
 }
 });
 
+//feed API - Get /feed - get all the user from the database
+
+app.get("/feed", async (req,res)=>{
+
+    try{
+        const users = await User.find({});
+        res.send(users);
+    }
+    catch (err){
+        req.status(400).send("Something went wrong");
+    }
+})
+
 
 
 
