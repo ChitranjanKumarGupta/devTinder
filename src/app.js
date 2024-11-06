@@ -3,17 +3,13 @@ const connectDB = require("./config/database");
 const app = express();
 const User = require("./models/user");
 
+// middleware to handle JSON object from Postman to UI
+app.use(express.json());
 app.post("/signup", async (req,res) => {
-    const userObj = {
-        firstName : "Virat",
-        lastName : "Sachin",
-        emailId : "akshay@gmail.com",
-        password : "akshay@123"
-    }
 
     
 // creating a new instance of the user model
-const user = new User(userObj);
+const user = new User(req.body);
 
 try{
     await user.save();
