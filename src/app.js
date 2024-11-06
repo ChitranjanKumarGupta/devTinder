@@ -6,7 +6,7 @@ const User = require("./models/user");
 app.post("/signup", async (req,res) => {
     const userObj = {
         firstName : "Virat",
-        lastName : "Koh22li",
+        lastName : "Sachin",
         emailId : "akshay@gmail.com",
         password : "akshay@123"
     }
